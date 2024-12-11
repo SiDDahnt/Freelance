@@ -1,0 +1,152 @@
+/* Main Container Styling */
+.main-container{
+  min-height: 78vh;
+}
+
+.profile-container {
+  max-width: 500px;
+  width: 90%; /* Responsive width */
+  background: linear-gradient(145deg, #1e1e2f, #161625); /* Gradient background for depth */
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5); /* Soft shadow for elevation */
+  animation: fadeIn 1s ease-in-out; /* Smooth fade-in effect */
+  color: #f0ebd8; /* Light cream text */
+  text-align: center;
+  margin: auto;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Slide in from above */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Final position */
+  }
+}
+
+/* Heading Styling */
+.profile-container h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff; /* Bright white for the heading */
+  margin-bottom: 25px;
+  letter-spacing: 1.2px;
+}
+
+span {
+  color: #66fcf1; /* Teal blue for highlights */
+}
+
+/* User Details Styling */
+.user-details {
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.user-details p {
+  margin: 15px 0;
+}
+
+.user-details strong {
+  color: #66fcf1; /* Highlight important text with teal */
+}
+
+/* No User Available Styling */
+.profile-container .no-user {
+  font-size: 18px;
+  color: #ff6347; /* Red for no user message */
+  margin-top: 20px;
+}
+
+/* Edit Button Section */
+.edit-button-container {
+  margin-top: 30px;
+}
+
+.edit-button-container button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  color: #1a1a40;
+  background: linear-gradient(135deg, #1f4068, #66fcf1); /* Gradient for buttons */
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.edit-button-container button:hover {
+  background: linear-gradient(135deg, #66fcf1, #45a29e); /* Hover effect */
+  transform: scale(1.05);
+}
+
+.edit-button-container button:active {
+  transform: scale(0.95);
+}
+
+/* Layout Styling */
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #1a1a40; /* Dark background for contrast */
+}
+
+/* Main Container Centering */
+.main-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Space around the container */
+}
+
+/* Footer Styling */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 15px 10px;
+  background: linear-gradient(145deg, #161625, #1e1e2f); /* Footer gradient for cohesion */
+  color: #ffffff; /* Bright white text */
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow on footer */
+}
+
+footer a {
+  text-decoration: none;
+  color: #66fcf1; /* Teal for links */
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #45a29e;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 20px;
+  }
+
+  .profile-container h2 {
+    font-size: 28px;
+  }
+
+  .user-details {
+    font-size: 16px;
+  }
+
+  .edit-button-container button {
+    font-size: 0.9rem;
+  }
+}

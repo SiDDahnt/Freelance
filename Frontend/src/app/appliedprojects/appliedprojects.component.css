@@ -1,0 +1,81 @@
+/* Main Container for Applied Jobs */
+.applied-jobs-container {
+  min-height: 84vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #1a1a40, #1f4068); /* Gradient background */
+  color: #f0ebd8; /* Light text color */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Heading Styling */
+.applied-jobs-container h2 {
+  text-align: center;
+  margin-bottom: 10px; /* Reduced space from heading to the first card */
+  color: #f0ebd8;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Teal-colored span in the heading */
+.applied-jobs-container h2 span {
+  color: #66fcf1; /* Teal color for emphasis */
+  font-weight: bold;
+}
+
+/* Individual Job Card Styling */
+.job-card {
+  background-color: #1f4068; /* Dark blue card background */
+  color: #f0ebd8; /* Light text color for contrast */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px; /* Increased space between consecutive cards */
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for Job Card */
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Job Title Styling */
+.job-card h3 {
+  margin: 0 0 10px;
+  color: #66fcf1; /* Teal blue for job title */
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Paragraph Styling */
+.job-card p {
+  margin: 8px 0;
+  color: #d1d1d1; /* Lighter color for the description text */
+  line-height: 1.6;
+}
+
+/* Styling for Fallback Message (No Jobs) */
+.ng-template p {
+  text-align: center;
+  color: #d1d1d1;
+  font-size: 18px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .job-card {
+      padding: 15px;
+  }
+
+  .job-card h3 {
+      font-size: 20px;
+  }
+
+  .job-card p {
+      font-size: 16px;
+  }
+}

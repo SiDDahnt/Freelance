@@ -1,0 +1,165 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a40, #1f4068); /* Dark blue gradient */
+    color: #f0ebd8; /* Light beige text */
+}
+
+/* Main Container Styling */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #161625; /* Very dark blue */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Deep shadow effect */
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+/* Project Header */
+.project-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.project-header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #66fcf1; /* Teal blue border */
+}
+
+.project-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #66fcf1; /* Teal blue text */
+    margin-top: 1rem;
+}
+
+.project-header p {
+    font-size: 1.2rem;
+    color: #b3b3b3; /* Soft gray */
+}
+
+/* Project Info Section */
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    color: #b3b3b3; /* Soft gray */
+}
+
+.project-info div {
+    font-size: 1rem;
+}
+
+/* Section Styling */
+.section {
+    margin-bottom: 1.5rem;
+}
+
+.section h3 {
+    font-size: 1.2rem;
+    color: #66fcf1; /* Teal blue */
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #66fcf1; /* Underline divider */
+    padding-bottom: 0.5rem;
+}
+
+.section p {
+    color: #ffffff; /* White text color for project description */
+}
+
+/* Expected Pay */
+
+
+/* Skills List Styling */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-item {
+    background-color: black; /* Dark navy background */
+    color: #f0ebd8; /* Light beige text */
+    padding: 0.3em 0.7em;
+    border-radius: 1em;
+    font-size: 0.9rem;
+    margin-top: 0.5em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* Apply Button Styling */
+.apply-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative; /* Tooltip positioning */
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #1a1a40; /* Dark text */
+    background: linear-gradient(135deg, #1f4068, #66fcf1); /* Gradient background */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+
+button:hover {
+    background: linear-gradient(135deg, #66fcf1, #45a29e); /* Lighter teal on hover */
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:disabled {
+    background-color: #ccc; /* Greyed-out button */
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* Tooltip Message */
+button:disabled:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #034078; /* Tooltip background */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* Loading Section Styling */
+.loading {
+    text-align: center;
+    color: #b3b3b3; /* Soft gray text */
+    font-size: 1.2rem;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

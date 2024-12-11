@@ -1,0 +1,298 @@
+/* Header Styles */
+.header {
+    background-color: #0D1321;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.name h2 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    font-weight: 500;
+}
+
+.name h2 span {
+    color: #66fcf1;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    justify-content: center; /* Centers the navigation items horizontally */
+    align-items: center; /* Centers the navigation items vertically */
+    flex-grow: 1; /* Ensures the navigation takes the available space to center properly */
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Ensures all items are vertically aligned */
+}
+
+.nav ul li {
+    margin-right: 20px;
+    display: flex;
+    align-items: center; /* Aligns content within the list items */
+}
+
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.login ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.login ul li {
+    margin-left: 20px;
+}
+
+.login ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+.login ul li a:hover {
+    cursor: pointer;
+}
+
+.login ul li a.loginBtn:hover {
+    color: #F0EBD8;
+}
+
+.login ul li a.signBtn {
+    background-color: #F0EBD8;
+    padding: 5px 12px;
+    border-radius: 5px;
+    color: #1A1423;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.login ul li a.signBtn:hover {
+    background-color: #D8D3C2;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name, .nav, .login {
+    display: inline-flex;
+    align-items: center;
+}
+
+.profile {
+    height: 50px;
+    vertical-align: middle; /* Ensures the image aligns well with text elements */
+    cursor: pointer;
+}
+
+.profile-dropdown {
+    position: relative;
+}
+
+/* Keyframes for dropdown animation */
+@keyframes dropdownOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-dropdown .dropdown-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #0D1321;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    min-width: 150px;
+    z-index: 1000;
+    animation: dropdownOpen 0.5s ease forwards;
+    opacity: 0; /* Initial state for animation */
+}
+
+.profile-dropdown .dropdown-menu li {
+    list-style: none;
+}
+
+.profile-dropdown .dropdown-menu li a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block; /* Ensures the link takes up the full width */
+    font-size: 16px;
+    transition: background-color 0.5s ease;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
+
+.profile-dropdown .dropdown-menu li a:hover {
+    background-color: #748CAB;
+    color: #F0EBD8;
+}
+
+/* Footer Styles */
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: #0D1321;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    bottom: 0;
+}
+
+/* Project Section CSS */
+.project-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #161625;
+    color: white;
+}
+
+.project-section h2 {
+    font-size: 24px;
+    color: #66fcf1;
+    margin-bottom: 20px;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.project-card {
+    background-color: #0D1321;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    font-size: 18px;
+    color: #66fcf1;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin-bottom: 15px;
+}
+
+.project-card a {
+    color: #66fcf1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: #45a29e;
+}
+
+/* Dropdown Container */
+.project-dropdown {
+    position: relative; /* To position the dropdown menu */
+    list-style: none;
+}
+
+/* Dropdown Trigger Link */
+.project-dropdown > a {
+    text-decoration: none;
+    color: #66fcf1; /* Teal color */
+    font-size: 1rem;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.project-dropdown > a:hover {
+    color: #45a29e; /* Slightly lighter teal on hover */
+}
+
+/* Dropdown Menu */
+.project-dropdown .dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Positioned below the trigger */
+    left: 0;
+    background-color: #161625; /* Very dark background */
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+/* Dropdown Menu Links */
+.project-dropdown .dropdown-menu li {
+    list-style: none;
+}
+
+.project-dropdown .dropdown-menu li a {
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    color: #b3b3b3; /* Light gray text */
+    font-size: 0.9rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: ch;
+}
+
+.project-dropdown .dropdown-menu li a:hover {
+    color: #161625; /* Dark text on hover */
+    background-color: #66fcf1; /* Teal background */
+    border-radius: 1em;
+}
+
+/* Show Dropdown on Hover */
+.project-dropdown:hover .dropdown-menu {
+    display: block; /* Makes the dropdown visible */
+}

@@ -1,0 +1,29 @@
+<div class="recent">
+  <h3 class="title">Projects for {{ categoryName | uppercase }}</h3>
+  <div class="all">
+    <div class="card snaps-inline">
+      <mat-card class="recentCard"  *ngFor="let project of projectDetails">
+
+        
+        <div class="cardTitle">
+          <img [src]="project.imageUrl || 'default-image-url.png'" alt="Project Image" class="cardTitleImg">
+          <mat-card-title class="recentTitle">{{ project.title }}</mat-card-title>
+        </div>
+        <mat-card-subtitle class="recentSubtitle">{{ project.company }}</mat-card-subtitle>
+        
+        <!-- Skills Section -->
+        <div class="recentSkills">
+          <div class="skillsList skillsInline">
+            <div class="item" *ngFor="let skill of project.skills">{{ skill }}</div>
+          </div>
+        </div>
+        
+        <!-- Payment Section -->
+        <h5><span>Payment</span></h5>
+        <h5 class="money">{{ project.salary | currency:'INR' }}</h5>
+
+        <a routerLink="/projectpage/{{ project.id }}"><button>View in Detail</button></a>
+      </mat-card>
+    </div>
+  </div>
+</div>

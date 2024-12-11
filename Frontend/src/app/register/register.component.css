@@ -1,0 +1,213 @@
+/* Main Container Styling */
+.main-container {
+    min-height: 78vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #1a1a40, #1f4068); /* Dark blue gradient */
+}
+
+/* Card Container Styling */
+.container {
+    max-width: 500px;
+    width: 100%;
+    background: #161625; /* Very dark blue for contrast */
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Deep shadow effect */
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Slide slightly from above */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Original position */
+    }
+}
+
+/* Heading Styling */
+.heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+    /* text-transform: uppercase; */
+}
+
+.heading span {
+    color: #66fcf1; /* Teal blue for highlights */
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label Styling */
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input Field Styling */
+input {
+    width: 95%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1a1a40; /* Dark input background */
+    color: #b3b3b3;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Focus Effect */
+input:focus {
+    border-color: #66fcf1; /* Teal blue focus effect */
+    box-shadow: 0 0 8px rgba(102, 252, 241, 0.5);
+    outline: none;
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: #666;
+}
+
+/* Link Styling */
+a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    color: #66fcf1; /* Teal blue for links */
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #45a29e; /* Lighter teal on hover */
+}
+
+/* Parent Container for Button */
+.parent-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a1a40;
+    background: linear-gradient(135deg, #1f4068, #66fcf1); /* Dark to teal gradient */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #66fcf1, #45a29e); /* Lighter hover effect */
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Popup Styling */
+.popup {
+    position: fixed;
+    top: -150%;
+    opacity: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    width: 320px;
+    padding: 25px;
+    background: #161625;
+    border: 1px solid #333;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+}
+
+/* Active Popup */
+.popup.active {
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+}
+
+/* Popup Title Styling */
+.title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #66fcf1; /* Teal blue for popup title */
+    margin-bottom: 15px;
+}
+
+/* OTP Input Fields */
+#otp-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#otp-form input {
+    width: 35px;
+    height: 45px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #1a1a40; /* Dark input background */
+    color: #b3b3b3;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#otp-form input:focus {
+    border-color: #66fcf1;
+    box-shadow: 0 0 8px rgba(102, 252, 241, 0.5);
+    outline: none;
+}
+
+/* Verify OTP Button */
+#verify-otp {
+    margin-top: 15px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1a1a40;
+    background: linear-gradient(135deg, #1f4068, #66fcf1);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#verify-otp:hover {
+    background: linear-gradient(135deg, #66fcf1, #45a29e);
+    transform: scale(1.05);
+}
+
+#verify-otp:active {
+    transform: scale(0.95);
+}

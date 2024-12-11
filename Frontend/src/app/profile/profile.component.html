@@ -1,0 +1,16 @@
+<div class="main-container">
+  <div class="profile-container">
+    <h2>User <span>PROFILE</span></h2>
+  
+    <!-- Display user details if available -->
+    <div *ngIf="user && user.name && user.email" class="user-details">
+      <p><strong>Name:</strong> {{ user.name }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+    </div>
+  
+    <!-- Message when no user details are available -->
+    <div *ngIf="!user.name && !user.email">
+      <p>No user details available.</p>
+    </div>
+  </div>
+</div>

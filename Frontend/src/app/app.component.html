@@ -1,0 +1,53 @@
+<div class="header">
+  <div class="name">
+    <a routerLink="/"><img class=logo src="https://res.cloudinary.com/dd5kcqowq/image/upload/v1725854297/NewLogo2_jeff15.png" alt=""></a>
+    <h2>Work<span>MONK</span>ey</h2>
+  </div>
+  <div class="nav">
+    <ul>
+      <li class="project-dropdown">
+        <a href="#">Projects</a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/projects/WEB_DEVELOPMENT">Web Development</a></li>
+          <li><a routerLink="/projects/APP_DEVELOPMENT">App Development</a></li>
+          <li><a routerLink="/projects/AI_ML">AI/ML</a></li>
+          <li><a routerLink="/projects/SOCIAL_MEDIA_MARKETING">Social Media Marketing</a></li>
+          <li><a routerLink="/projects/VIDEO_EDITING">Video Editing</a></li>
+          <li><a routerLink="/projects/PRODUCT_PHOTOGRAPHY">Product Photography</a></li>
+          <li><a routerLink="/projects/GRAPHIC_DESIGN">Graphic Design</a></li>
+          <li><a routerLink="/projects/LOGO_DESIGN">Logo Design</a></li>
+          <li><a routerLink="/projects/SOFTWARE_DEVELOPMENT">Software Development</a></li>
+          <li><a routerLink="/projects/BLOG_WRITING">Blog Writing</a></li>
+          <li><a routerLink="/projects/DATA_ENTRY">Data Entry</a></li>
+        </ul>
+      </li>      
+      <li><a routerLink="/blog">Blog</a></li>
+      <!-- <li><a href="" routerLink="/how">How it Works</a></li> -->
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </div>
+  <div class="login">
+    <ul *ngIf="!token">
+      <li><a routerLink="/auth/login" class="loginBtn">Login</a></li>
+      <li><a routerLink="/auth/signup" class="signBtn">Signup</a></li>
+    </ul>
+    <ul *ngIf="token">
+      <li><a href="" routerLink="/projectpost">Post a Project</a></li>
+      <li class="profile-dropdown">
+        <img class="profile" src="https://res.cloudinary.com/dv3cpyv5m/image/upload/v1730691783/depositphotos_34271411-stock-illustration-vector-profile-icon-removebg-preview_qsgmle.png" alt="" (click)="toggleDropdown()">
+        <ul *ngIf="showDropdown" class="dropdown-menu">
+          <li><a routerLink="/profile">Profile</a></li>
+          <li><a routerLink="/personalprojects">Posted Projects</a></li>
+          <li><a routerLink="/appliedprojects">Applied Projects</a></li>
+          <li><a (click)="logout()">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<div class="footer">
+  <p>© 2024 WorkMONKey. All rights reserved.</p>
+</div>

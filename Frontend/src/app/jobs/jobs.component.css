@@ -1,0 +1,161 @@
+.recent .title {
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 35px;
+    color: #1a1a40;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.recent {
+    padding-bottom: 2em; /* Add padding to the bottom */
+    min-height: 77.3vh;
+}
+
+.recent .title span {
+    color: blueviolet;
+}
+
+.all {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    margin-top: 2em;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to the next line */ /* Space between cards */
+    justify-content: center;
+    gap: 2rem;
+}
+
+.recentCard {
+    width: 350px; 
+    height: 320px;
+    border-radius: 1em;
+    transition: box-shadow 0.3s ease;
+    background: linear-gradient(135deg, #1a1a40, #1f4068);
+    margin-bottom: 2rem;
+}
+
+.recentCard:hover {
+    box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2); /* Equal shadow on right and bottom */
+    cursor: pointer;
+}
+
+.cardTitle {
+    display: flex;
+    align-items: center;
+}
+
+.cardTitleImg {
+    margin-left: 0.5em; /* Adds space between the image and the title */
+    margin-top: 0.5em;
+    width: 60px; /* Adjust the image size */
+    height: 60px; /* Make the image a perfect circle */
+    border-radius: 50%; /* Makes the image circular */
+    border: 3px solid #45a29e; /* Adds a slight teal border */
+    padding: 3px; /* Adds some padding inside the border */
+}
+
+.recentTitle {
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+    font-weight: 400;
+    font-size: larger;
+    color: #66fcf1;
+}
+
+.recentSubtitle {
+    margin-top: 0.5em;
+    margin-left: 1em;
+    color: #F0EBD8; 
+}
+
+.recentSkills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2em;
+    margin-bottom: 2em; /* Adds space below the skills section */
+}
+
+.skillsList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 0 1.3rem;
+    margin-right: 1.5em;
+    margin-left: 0.5em;
+}
+
+.skillsList::-webkit-scrollbar {
+    display: none;
+}
+
+.skillsInline {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 1rem;
+}
+
+.skillsInline > * {
+    scroll-snap-align: start;
+}
+
+.item {
+    border: 1.5px solid;
+    box-sizing: border-box;
+    padding: 0.3em 0.5em;
+    white-space: nowrap;
+    min-width: fit-content;
+    border-radius: 1em;
+    background-color: #0D1321;
+    color: #F0EBD8;
+}
+
+h5 {
+    color: #F0EBD8;
+    margin-left: 1em;
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+span{
+    color: #66fcf1;
+}
+
+.recentCard a {
+    text-decoration: none; /* Removes underline from the link */
+}
+
+.recentCard a button {
+    display: block;
+    margin: 1.5em auto; /* Centers the button horizontally */
+    padding: 0.8em 1.5em; /* Adds spacing for better appearance */
+    font-size: 1em;
+    font-weight: bold;
+    color: #1a1a40;
+    background: linear-gradient(135deg, #1f4068, #66fcf1);
+    border: none; /* Removes border */
+    border-radius: 0.5em; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    cursor: pointer;
+}
+
+.recentCard a button:hover {
+    background: linear-gradient(135deg, #66fcf1, #45a29e); /* Lighter hover effect */
+    transform: scale(1.05);
+    color: #161625;
+}
+
+.recentCard a button:active {
+    background-color: #034078; /* Even darker blue on click */
+    transform: scale(0.95); /* Shrinks slightly when clicked */
+}
+

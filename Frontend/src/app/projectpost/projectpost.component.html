@@ -1,0 +1,81 @@
+<div class="main-container">
+    <div class="container">
+      <h5 class="heading">Post a <span>PROJECT</span></h5>
+      <div class="card">
+        <form>
+          <div class="form-group">
+            <label for="jobtitle">Project Title</label>
+            <input type="text" class="form-control" placeholder="Enter Project Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
+          </div>
+  
+          <div class="form-group">
+            <label for="orgname">Organisation Name</label>
+            <input type="text" class="form-control" placeholder="Enter Organisation Name" [(ngModel)]="company" [ngModelOptions]="{standalone: true}">
+          </div>
+  
+          <div class="form-group">
+            <label for="imageUpload">Upload Organisation Image</label>
+            <input type="file" class="form-control" (change)="onFileSelected($event)">
+            <div *ngIf="isUploading">Uploading...</div>
+            <div *ngIf="imageUrl">
+              <p>Image uploaded successfully!</p>
+              <a [href]="imageUrl" target="_blank">View Image</a>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="category">Project Category</label>
+            <select class="form-control" id="category" required [(ngModel)]="category" [ngModelOptions]="{standalone: true}">
+              <option value="" disabled selected>Select Category</option>
+              <option value="WEB_DEVELOPMENT">Web Development</option>
+              <option value="APP_DEVELOPMENT">App Development</option>
+              <option value="AI_ML">AI/ML</option>
+              <option value="SOCIAL_MEDIA_MARKETING">Social Media Marketing</option>
+              <option value="VIDEO_EDITING">Video Editing</option>
+              <option value="PRODUCT_PHOTOGRAPHY">Product Photography</option>
+              <option value="GRAPHIC_DESIGN">Graphic Design</option>
+              <option value="LOGO_DESIGN">Logo Design</option>
+              <option value="SOFTWARE_DEVELOPMENT">Software Development</option>
+              <option value="BLOG_WRITING">Blog Writing</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="skills">Required Skills</label>
+            <input type="text" class="form-control" placeholder="Enter a skill" [(ngModel)]="skill" [ngModelOptions]="{standalone: true}" (keydown.enter)="addSkill()">
+          </div>
+  
+          <div class="skills-list">
+            <ul>
+              <li *ngFor="let skill of skills" class="skill-item">
+                {{ skill }}
+                <button type="button" class="remove-button" (click)="removeSkill(skill)">✖</button>
+              </li>
+            </ul>
+          </div>
+  
+          <div class="form-group">
+            <label for="description">Project Description</label>
+            <textarea class="form-control" id="description" rows="4" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" placeholder="Enter Project Description"></textarea>
+          </div>
+  
+          <div class="form-group">
+            <label for="deadline">Deadline</label>
+            <input type="datetime" id="datetime" class="form-control" placeholder="Enter Deadline" [(ngModel)]="deadline" [ngModelOptions]="{standalone: true}">
+          </div>
+  
+          <div class="form-group">
+            <label for="pay">Expected Pay</label>
+            <input type="text" class="form-control" placeholder="Enter Expected Pay" [(ngModel)]="salary" [ngModelOptions]="{standalone: true}">
+          </div>
+  
+  
+          <div class="submit">
+            <button type="button" (click)="save()">Save</button>
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  </div>
+  

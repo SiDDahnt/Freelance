@@ -1,0 +1,27 @@
+<div class="applied-jobs-container">
+  <h2>Applied Jobs</h2>
+
+  <div *ngIf="user.appliedJobs?.length > 0; else noJobs">
+    <div class="job-card" *ngFor="let job of user.appliedJobs">
+      <h3>{{ job.title }}</h3>
+      <p><strong>Company:</strong> {{ job.company }}</p>
+      <p><strong>Description:</strong> {{ job.description }}</p>
+      <p><strong>Salary:</strong> {{ job.salary }}</p>
+      <p><strong>Category:</strong> {{ job.category }}</p>
+      <p><strong>Status:</strong> {{ job.status }}</p>
+      <p><strong>Posted On:</strong> {{ job.createdAt | date:'medium' }}</p>
+      <p><strong>Deadline:</strong> {{ job.deadline | date:'medium' }}</p>
+
+      <!-- Display client details -->
+      <div *ngIf="job.client">
+        <h4>Client Details:</h4>
+        <p><strong>Name:</strong> {{ job.client.name || 'N/A' }}</p>
+        <p><strong>Email:</strong> {{ job.client.email || 'N/A' }}</p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noJobs>
+    <p>You have not applied to any jobs yet.</p>
+  </ng-template>
+</div>

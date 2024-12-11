@@ -1,0 +1,213 @@
+<section class="card-container">
+  <div class="container-card">
+    <div class="card">
+      <div>
+        <h1>Work<span>MONK</span>ey</h1>
+        <h3>Your Gateway to Seamless Freelance Success!</h3>
+      </div>
+      <div class="blob"></div>
+      <div class="fakeblob"></div>
+    </div>
+  </div>
+</section>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   
+  
+  
+  
+  
+  
+  
+  
+  <div class="category">
+    <h3 class="title">Categories</h3>
+    <div class="all">
+      <div class="card1 snaps-inline">
+
+        <a routerLink="/projects/WEB_DEVELOPMENT">
+          <mat-card class="catCard web">
+            <mat-card-title class="catTitle">Web Development</mat-card-title>
+            <img class="webImg" src="https://res.cloudinary.com/dd5kcqowq/image/upload/v1725859982/Web-removebg-preview_yioctv.png" alt="">
+          </mat-card>
+        </a>
+  
+        <a routerLink="/projects/APP_DEVELOPMENT">
+          <mat-card class="catCard app">
+            <mat-card-title class="catTitle">App Development</mat-card-title>
+            <img class="appImg" src="https://res.cloudinary.com/dd5kcqowq/image/upload/v1725859434/App-removebg-preview_qvv7ga.png" alt="">
+          </mat-card>
+        </a>
+  
+        <a routerLink="/projects/AI_ML">
+          <mat-card class="catCard ai">
+            <mat-card-title class="catTitle">AI/ML</mat-card-title>
+            <img src="https://res.cloudinary.com/dd5kcqowq/image/upload/v1725881619/ai-removebg-preview_iwxmi0.png" alt="" class="aiImg">
+          </mat-card>
+        </a>
+  
+        <a routerLink="/projects/SOCIAL_MEDIA_MARKETING">
+          <mat-card class="catCard market">
+            <mat-card-title class="catTitle">Social Media Marketing</mat-card-title>
+            <img src="https://res.cloudinary.com/dd5kcqowq/image/upload/v1725886564/market-removebg-preview_lqei2b.png" alt="" class="marketImg">
+          </mat-card>
+        </a>
+  
+        <a routerLink="/projects/VIDEO_EDITING">
+          <mat-card class="catCard video">
+            <mat-card-title class="catTitle">Video Editing</mat-card-title>
+            <img src="https://res.cloudinary.com/dd5kcqowq/image/upload/v1725887228/video-removebg-preview_hmrxhk.png" alt="" class="videoImg">
+          </mat-card>
+        </a>
+  
+        <a routerLink="/projects/PRODUCT_PHOTOGRAPHY">
+          <mat-card class="catCard product">
+            <mat-card-title class="catTitle">Product Photography</mat-card-title>
+            <img src="https://res.cloudinary.com/dd5kcqowq/image/upload/v1725888993/product_lch2gb.webp" alt="" class="productImg">
+          </mat-card>
+        </a>
+  
+        <a routerLink="/projects/GRAPHIC_DESIGN">
+          <mat-card class="catCard graphic">
+            <mat-card-title class="catTitle">Graphic Design</mat-card-title>
+            <img class="graphicImg" src="https://res.cloudinary.com/dd5kcqowq/image/upload/v1725880431/graphic-removebg-preview_phltix.png" alt="">
+          </mat-card>
+        </a>
+        
+        <a routerLink="/projects/LOGO_DESIGN">
+          <mat-card class="catCard logo">
+            <mat-card-title class="catTitle">Logo Design</mat-card-title>
+            <img class="logoImg" src="https://res.cloudinary.com/dhmh3ow2e/image/upload/v1726034849/logo-designing-company-in-vadodara_ssxiil.png" alt="">
+          </mat-card>
+        </a>
+  
+        <a routerLink="/projects/SOFTWARE_DEVELOPMENT">
+          <mat-card class="catCard softdev">
+            <mat-card-title class="catTitle">Software Development</mat-card-title>
+            <img class="softdevImg" src="https://res.cloudinary.com/dhmh3ow2e/image/upload/v1726318199/developpement-logiciel-sur-mesure_clnatm.png" alt="">
+          </mat-card>
+        </a>
+  
+        <a routerLink="/projects/BLOG_WRITING">
+          <mat-card class="catCard blog">
+            <mat-card-title class="catTitle">Blog Writing</mat-card-title>
+            <img class="blogImg" src="https://res.cloudinary.com/dhmh3ow2e/image/upload/v1726319337/images-removebg-preview_qg2zfc.png" alt="">
+          </mat-card>
+        </a>
+  
+        <a routerLink="/projects/DATA_ENTRY">
+          <mat-card class="catCard dataentry">
+            <mat-card-title class="catTitle">Data Entry</mat-card-title>
+            <img class="deImg" src="https://res.cloudinary.com/dhmh3ow2e/image/upload/v1726320983/Screenshot_2024-09-14_185858-removebg-preview_1_arjofb.png" alt="">
+          </mat-card>
+        </a>
+  
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="recent">
+    <h3 class="title">Recent <span>Services</span></h3>
+    <div class="all">
+      <div class="card2 snaps-inline" #recentJobsContainer>
+        <mat-card class="recentCard" *ngFor="let project of recentJobs">
+          <div class="cardTitle">
+            <img [src]="project.imageUrl || 'default-image-url.png'" alt="" class="cardTitleImg">
+            <mat-card-title class="recentTitle">{{ project.title }} </mat-card-title>
+          </div>
+          <mat-card-subtitle class="recentSubtitle">{{ project.company }}</mat-card-subtitle>
+          <div class="recentSkills">
+            <div class="skillsList skillsInline">
+              <div class="item" *ngFor="let skill of project.skills">{{ skill }}</div>
+            </div>
+          </div>
+          <h5><span>Payment</span></h5>
+          <h5 class="money">{{ project.salary | currency:'USD' }}</h5>
+          <a routerLink="/projectpage/{{ project.id }}"><button>View in Detail</button></a>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  <div class="contact" id="contact">
+    <h3 class="title">Get In <span>Touch</span></h3>
+    <h2 class="subtitle">Contact Us</h2>
+    <div class="formStart">
+      <form action="" class="form" id="contact-form">
+        <div class="entry">
+          <label for="name">Name <span class="sym">*</span></label><br>
+          <input type="text" name="user_name" required placeholder="Enter Your Name" class="field"><br>
+        </div>
+        <div class="entry">
+          <label for="Email">Email <span class="sym">*</span></label><br>
+          <input type="email" name="user_email" required placeholder="Enter Your Email" class="field"><br>
+        </div>
+        <div class="entry">
+          <label for="project">Message <span class="sym">*</span></label><br>
+          <textarea name="user_project" placeholder="Enter Your Message" class="field"></textarea><br>
+          <p class="msg" id="contact-message"></p>
+        </div>
+        <div class="entry">
+          <button type="submit" class="btn">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </div> 

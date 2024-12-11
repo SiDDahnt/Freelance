@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>Jobs <span>POSTED</span></h2>
+  <div *ngIf="jobs.length > 0; else noJobs">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Company</th>
+          <th>Category</th>
+          <th>Skills</th>
+          <th>Salary</th>
+          <th>Deadline</th>
+          <th>Status</th>
+          <th>Completed</th>
+          <th>Payment</th>
+          <th>Developer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let job of jobs">
+          <td>{{ job.title }}</td>
+          <td>{{ job.company }}</td>
+          <td>{{ job.category }}</td>
+          <td>{{ job.skills.join(', ') }}</td>
+          <td>{{ job.salary }}</td>
+          <td>{{ job.deadline | date:'MMM d, y' }}</td>
+          <td>{{ job.status }}</td>
+          <td><button (click)="completeJob(job.id)">Yes</button></td>
+          <td><button (click)="payNow()">Pay</button></td>
+          <td>
+            <ng-container *ngIf="job.developer; else loading">
+              {{ job.developer.name }} ({{ job.developer.email }})
+            </ng-container>
+            <ng-template #loading>
+              N/A
+            </ng-template>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noJobs>
+    <p>No jobs posted yet.</p>
+  </ng-template>
+</div>

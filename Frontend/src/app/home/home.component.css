@@ -1,0 +1,607 @@
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px; /* Adjust margin to compensate for the card's upward shift */
+}
+.container-card {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.card {
+    position: relative;
+    width: 97%; /* Adjusted width to occupy more space */
+    height: 500px; /* Increased height for a background effect */
+    padding: 1px;
+    background-color: #1a1a40;
+    border-radius: 15px;
+    z-index: 0;
+    overflow: hidden;
+    display: flex; /* Added Flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Horizontal center */
+    justify-content: center; /* Vertical center */
+    transition: transform 0.6s ease, background-color 0.6s ease, top 0.6s ease;
+    top: 0;
+    position: relative; /* Enables upward movement */
+}
+
+.card:hover { /* Shift card slightly upward on hover */
+    background-color: #1a1a40; /* Slightly darker background on hover */
+}
+
+/* Background dots using ::before */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+    background-size: 20px 20px; /* Adjust size of dots */
+    z-index: -2; /* Place it behind all other elements */
+    opacity: 0.2; /* Slightly transparent for a subtle effect */
+}
+
+/* Blob animation */
+.card .blob {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--blob-size, 800px); /* Adjusted size for smaller blobs */
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(118, 49, 255, 0.768);
+    filter: blur(400px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.card:hover .blob {
+    opacity: 1;
+    transform: scale(1.2); /* Smooth scale effect */
+}
+
+/* Style for <h1> and <h3> */
+.card h1 {
+    color: #ffffff;
+    font-size: 4rem; /* Increased font size */
+    text-align: center;
+    margin: 0;
+    transition: transform 0.6s ease, color 0.6s ease;
+}
+.card h3 {
+    color: #e0e0e0;
+    font-size: 2rem; /* Increased font size */
+    text-align: center;
+    margin-top: 20px; /* Added spacing between h1 and h3 */
+    transition: transform 0.6s ease, color 0.6s ease;
+}
+
+/* Hover effect for <h1> and <h3> */
+.card:hover span {
+    transform: translateY(-10px); /* Slight upward motion on hover */
+    color: #66fcf1; /* Golden color for hover */
+}
+.card:hover h3 {
+    transform: translateY(-5px); /* Slight upward motion on hover */
+    color: #66fcf1; /* Light orange color for hover */
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.category .title {
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 32px;
+    color: #1a1a40;
+    margin-bottom: 10px;
+}
+
+.card1 {
+    --spacer: 1.3rem;
+    display: grid;
+    gap: var(--spacer);
+    grid-auto-flow: column;
+    grid-auto-columns: 14%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0 var(--spacer) var(--spacer);
+    scrollbar-width: none;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+.card1::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+}
+
+.catCard {
+    width: 180px;
+    height: 220px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px; 
+    transition: background-color 0.25s ease, box-shadow 0.2s ease;
+    color: white;
+    border-radius: 1em;
+}
+.catCard:hover {
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    cursor: pointer;
+}
+.web {
+    background-color: #0f786f;
+}
+.webImg {
+    width: 150px;
+    height: 130px;
+    border-radius: 1em;
+    margin-top: 30px;
+    background-color: #118a7e;
+}
+.catCard.web:hover {
+    background-color: #118a7e; /* Lighten the background color on hover */
+}
+.app {
+    background-color: #0d3c8c;
+}
+.appImg {
+    height: 130px;
+    margin-top: 30px;
+    border-radius: 1em;
+    width: 155px;
+    background-color: #1450A3;
+}
+.app:hover {
+    background-color: #1450A3; /* Lighten the background color on hover */
+}
+.ai {
+    background-color: #5f3f7e;
+}
+.aiImg {
+    height: 132px;
+    width: 155px;
+    border-radius: 1em;
+    margin-top: 30px;
+    background-color: #77529e;
+}
+.ai:hover {
+    background-color: #77529e;
+}
+.market {
+    background-color: #c93d3d;
+}
+.marketImg {
+    height: 130px;
+    width: 155px;
+    border-radius: 1em;
+    margin-top: 30px;
+    background-color: #e46161;
+}
+.market:hover {
+    background-color: #e46161;
+}
+.video {
+    background-color: #f7a65a;
+}
+.videoImg {
+    height: 130px;
+    width: 155px;
+    border-radius: 1em;
+    margin-top: 30px;
+    background-color: #ffc073;
+}
+.video:hover {
+    background-color: #ffc073;
+}
+.product {
+    background-color: #4a5b54;
+}
+.productImg {
+    height: 130px;
+    width: 155px;
+    border-radius: 1em;
+    margin-top: 30px;
+    background-color: #5a6e66;
+}
+.product:hover {
+    background-color: #5a6e66;
+}
+.graphic {
+    background-color: #9a6fbf;
+}
+.graphicImg {
+    height: 130px;
+    width: 155px;
+    border-radius: 1em;
+    margin-top: 30px;
+    background-color: #be97dc;
+}
+.graphic:hover {
+    background-color: #be97dc;
+}
+.logo {
+    background-color: #fb6f92;
+}
+.logoImg {
+    height: 130px;
+    width: 155px;
+    border-radius: 1em;
+    margin-top: 30px;
+    background-color: #ff8fab;
+}
+.logo:hover {
+    background-color: #ff8fab;
+}
+.softdev {
+    background-color: #04516f;
+}
+.softdevImg {
+    height: 130px;
+    width: 155px;
+    border-radius: 1em;
+    margin-top: 30px;
+    background-color: #05668d;
+}
+.softdev:hover {
+    background-color: #05668d;
+}
+.blog {
+    background-color: #fa7e47;
+}
+.blogImg {
+    height: 130px;
+    width: 155px;
+    border-radius: 1em;
+    margin-top: 30px;
+    background-color: #ff9770;
+}
+.blog:hover {
+    background-color: #ff9770;
+}
+.dataentry {
+    background-color: #7a0454;
+}
+.deImg {
+    height: 130px;
+    width: 155px;
+    border-radius: 2em;
+    margin-top: 30px;
+    background-color: #a02c66;
+}
+.dataentry:hover {
+    background-color: #a02c66;
+}
+.catTitle {
+    font-weight: 500;
+    text-align: center; 
+    font-size: small;
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.recent .title {
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 32px;
+    color: #1a1a40;
+    margin-bottom: 10px;
+}
+.recent .title span {
+    color: #45a29e;
+}
+.all {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2em;
+}
+.card2 {
+    --spacer: 1.3rem;
+    display: grid;
+    gap: var(--spacer);
+    grid-auto-flow: column;
+    grid-auto-columns: 25%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0 var(--spacer) var(--spacer);
+    scrollbar-width: none;
+}
+.card2::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+}
+.snaps-inline {
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--spacer, 1rem);
+}
+.snaps-inline > * {
+    scroll-snap-align: start;
+}
+.recentCard {
+    width: 350px;
+    height: 320px;
+    border-radius: 1em;
+    transition: box-shadow 0.3s ease;
+    background: linear-gradient(135deg, #1a1a40, #1f4068); /* Dark blue gradient */
+}
+.recentCard:hover {
+    box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2); /* Equal shadow on right and bottom */
+    cursor: pointer;
+}
+.cardTitle {
+    display: flex;
+    align-items: center;
+}
+.cardTitleImg {
+    margin-left: 0.5em; /* Adds space between the image and the title */
+    margin-top: 0.5em;
+    width: 60px; /* Adjust the image size */
+    height: 60px; /* Make the image a perfect circle */
+    border-radius: 50%; /* Makes the image circular */
+    border: 3px solid #45a29e; /* Adds a slight teal border */
+    padding: 3px; /* Adds some padding inside the border */
+}
+
+.recentTitle {
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+    font-weight: 400;
+    font-size: larger;
+    color: #66fcf1;
+}
+.recentSubtitle {
+    margin-top: 0.5em;
+    margin-left: 1em;
+    color: #F0EBD8; 
+}
+.recentSkills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2em;
+}
+.skillsList {
+    --spacer: 1.3rem;
+    display: flex;
+    justify-content: space-between; /* Space items with equal gaps between them */
+    align-items: center;
+    gap: 0.5rem; /* Adds a small distance between each item */
+    overflow-x: auto;
+    padding: 0 var(--spacer) var(--spacer);
+    scrollbar-width: even;
+    margin-right: 1.5em;
+    margin-left: 0.5em;
+}
+.skillsList::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+}
+.skillsInline {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: var(--spacer, 1rem);
+}
+.skillsInline > * {
+    scroll-snap-align: start;
+}
+.item {
+    border: 1.5px solid;
+    box-sizing: border-box;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    white-space: nowrap; 
+    min-width: fit-content;
+    border-radius: 1em;
+    background-color: #0D1321;
+    color: #F0EBD8;
+}
+h5 {
+    color: #F0EBD8;
+    margin-left: 1em;
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+span{
+    color: #66fcf1;
+}
+
+.recentCard a {
+    text-decoration: none; /* Removes underline from the link */
+}
+
+.recentCard a button {
+    display: block;
+    margin: 1.5em auto; /* Centers the button horizontally */
+    padding: 0.8em 1.5em; /* Adds spacing for better appearance */
+    font-size: 1em;
+    font-weight: bold;
+    color: #1a1a40;
+    background: linear-gradient(135deg, #1f4068, #66fcf1);
+    border: none; /* Removes border */
+    border-radius: 0.5em; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    cursor: pointer;
+}
+
+.recentCard a button:hover {
+    background: linear-gradient(135deg, #66fcf1, #45a29e); /* Lighter hover effect */
+    transform: scale(1.05);
+    color: #161625;
+}
+
+.recentCard a button:active {
+    background-color: #034078; /* Even darker blue on click */
+    transform: scale(0.95); /* Shrinks slightly when clicked */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Contact Section */
+.contact {
+    padding: 40px;
+    background: linear-gradient(135deg, #1a1a40, #1f4068); /* Dark blue gradient */
+    color: white;
+    border-radius: 12px;
+    margin: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.contact .title {
+    text-align: center;
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.contact .title span {
+    color: #66fcf1; /* Teal blue for highlight */
+}
+.contact .subtitle {
+    text-align: center;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+    font-style: italic;
+}
+.formStart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    width: 100%;
+    max-width: 600px;
+    padding: 25px;
+    background: #161625; /* Very dark blue for contrast */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.entry {
+    margin-bottom: 20px;
+}
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
+}
+.field {
+    width: 95%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    font-size: 16px;
+    color: #b3b3b3;
+    background: #1a1a40; /* Dark background for input fields */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.field:focus {
+    border-color: #66fcf1; /* Teal blue focus effect */
+    box-shadow: 0 0 8px rgba(102, 252, 241, 0.5);
+    outline: none;
+}
+textarea.field {
+    resize: none;
+    height: 150px;
+}
+.sym {
+    color: red; /* Red for asterisks */
+}
+.btn {
+    background: linear-gradient(135deg, #1f4068, #66fcf1); /* Dark to teal blue gradient */
+    color: #1a1a40;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+}
+.btn:hover {
+    background: linear-gradient(135deg, #66fcf1, #45a29e); /* Lighter hover effect */
+    transform: scale(1.05);
+    color: #161625;
+}
+p.msg {
+    color: #66fcf1; /* Teal blue for error messages */
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}

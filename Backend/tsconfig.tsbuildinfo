@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/mailer/mailer.ts","./src/middleware/authMiddleware.ts","./src/routes/authRoute.ts","./src/routes/jobRoute.ts","./src/routes/otp.ts"],"version":"5.6.3"}

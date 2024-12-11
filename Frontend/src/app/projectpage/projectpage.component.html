@@ -1,0 +1,58 @@
+<div class="container" *ngIf="jobDetails; else loading">
+    <!-- Project Header -->
+    <div class="project-header">
+      <img [src]="jobDetails.imageUrl || 'default-logo.png'" alt="Organization Logo">
+      <h1 class="project-title">{{ jobDetails.title }}</h1>
+      <p>{{ jobDetails.company }}</p>
+    </div>
+  
+    <!-- Project Info -->
+    <div class="project-info">
+      <div>Category: <strong>{{ jobDetails.category }}</strong></div>
+      <div>Deadline: <strong>{{ jobDetails.deadline | date }}</strong></div>
+    </div>
+  
+    <!-- Skills Required -->
+    <div class="section" *ngIf="jobDetails.skills?.length">
+      <h3>Skills Required:</h3>
+      <div class="skills-list">
+        <span class="skill-item" *ngFor="let skill of jobDetails.skills">{{ skill }}</span>
+      </div>
+    </div>
+  
+    <!-- Project Description -->
+    <div class="section">
+      <h3>Project Description:</h3>
+      <p>{{ jobDetails.description }}</p>
+    </div>
+  
+    <!-- Payment Information -->
+    <div class="section">
+      <h3>Expected Pay:</h3>
+      <p><strong>{{ jobDetails.salary }}</strong></p>
+    </div>
+  
+    <!-- Apply Button -->
+    <div class="apply-button">
+        <button
+          (click)="applyForJob()"
+          [disabled]="!token || jobDetails.status !== 'PENDING'"
+          [attr.data-tooltip]="
+            !token 
+              ? 'Please login to apply!' 
+              : (jobDetails.status !== 'PENDING' 
+                  ? getStatusMessage(jobDetails.status) 
+                  : ''
+                )
+          ">
+          Apply Now
+        </button>
+      </div>
+</div>      
+  
+  <ng-template #loading>
+    <div class="loading">
+      <p>Loading project details...</p>
+    </div>
+  </ng-template>
+  
